@@ -1,0 +1,100 @@
+body {
+  margin: 0; 
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 80% 15%, #263568 0, transparent 35%),
+              radial-gradient(ellipse at 8% 80%, #25234f 0, transparent 34%), #0b1228;
+  font-family: "DM Sans", sans-serif;
+  padding: 30px 20px 40px 30px;
+  color: white;
+}
+.logo{
+    font-family: "titleFont";
+    font-size: 27px;
+    letter-spacing: 1px;
+    color: #8da8ff;
+}
+.title{
+    font-family: "titleFont";
+    font-size: 72px; 
+    margin-top: 5px;
+}
+.logo span{
+    color: white;
+    font-size: 30px;
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #34d399;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #34d399;
+}
+.live-weather{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 550;
+  letter-spacing: 1px;
+  color: #94a3b8;
+}
+.align{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.small-txt{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 550;
+  letter-spacing: 1px;
+  color: #8da8ff; 
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: transparent;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.weather-card{
+    border-radius: 10%;
+    width: 50px;
+    background-color: rgba(214,222,255,.2);
+    padding: 30px;
+}
+.color-gray{
+   color: #94a3b8; 
+}
+.address{
+    font-family: "talinaFont";
+    font-size: 18px;
+}
+.temp{    
+    font-family: "talinaFont";
+    font-size: 45px;   
+}
+.dateTxt{
+    font-size: 14px;    
+}
+@font-face {
+  font-family: "titleFont";
+  src: url("../font/Strong Bubble.ttf") format("truetype");
+}
+@font-face {
+  font-family: "talinaFont";
+  src: url("../font/Talina DEMO.otf") format("truetype");
+}
+
+
