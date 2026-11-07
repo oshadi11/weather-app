@@ -29,11 +29,11 @@
             <div class="row p-4">
                 <div class="col">
 
-                    <input class="form-control p-3 card-color" type="text" id="sizesInputDefault"
-                        placeholder="Default input" aria-label="Default input example">
+                    <input class="form-control p-3 card-color" id="search-bar" type="text" id="sizesInputDefault"
+                        placeholder="Enter city" aria-label="Default input example">
                 </div>
                 <div class="col">
-                    <button type="button" class="theme-accent btn-outline  btn-sm p-3 search-btn color-gray">
+                    <button type="button" onclick="search()" class="theme-accent btn-outline  btn-sm p-3 search-btn color-gray">
                         <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100"
                             height="100" viewBox="0 0 50 50">
                             <path
@@ -53,20 +53,20 @@
                 <h2 class="small-txt color-gray">CURRENT WEATHER</h2>
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <h1 class="temp">32&deg;C</h1>
+                        <h1 class="temp" id="temp">32&deg;C</h1>
                     </div>
                     <div class="col-auto">
-                        <h5 class="condition-txt">OverCast</h5>
-                        <h5 class="feels-like-txt color-gray">feels like <span>34&deg;C</span> </h5>
+                        <h5 class="condition-txt" id="condition">OverCast</h5>
+                        <h5 class="feels-like-txt color-gray">feels like <span id="feels-like">34&deg;C</span> </h5>
                     </div>
                 </div>
 
                 <div class="address">
-                    <h1>Colombo</h1>
-                    <h1>western province, Sri lanka</h1>
+                    <h1 id="city-name">Colombo</h1>
+                    <h1 id="state-country-name">western province, Sri lanka</h1>
                 </div>
 
-                <h3 class="dateTxt color-gray">Monday, 2 November</h3>
+                <h3 class="dateTxt color-gray" id="date">Monday, 2 November</h3>
             </div>
             <div class="row details-container g-2">
 
@@ -75,7 +75,7 @@
                         <div class="row">
                             <div class="col">
                                 <h5 class="details-txt">Wind</h5>
-                                <h5 class="color-gray value-txt">12mph</h5>
+                                <h5 class="color-gray value-txt" id="wind-speed">12mph</h5>
                             </div>
                             <div class="col">
                                 <img class="weather-icons" src="https://img.icons8.com/clouds/100/wind.png">
@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="col">
                                 <h5 class="details-txt">Humidity</h5>
-                                <h5 class="color-gray value-txt">65%</h5>
+                                <h5 class="color-gray value-txt" id="humidity">65%</h5>
                             </div>
                             <div class="col">
                                 <img class="weather-icons" src="https://img.icons8.com/clouds/100/water.png">
@@ -103,7 +103,7 @@
                         <div class="row">
                             <div class="col">
                                 <h5 class="details-txt">UV</h5>
-                                <h5 class="color-gray value-txt">5</h5>
+                                <h5 class="color-gray value-txt" id="uv">5</h5>
                             </div>
                             <div class="col">
                                 <img class="weather-icons" src="https://img.icons8.com/clouds/100/sun.png">
@@ -117,7 +117,7 @@
                         <div class="row">
                             <div class="col">
                                 <h5 class="details-txt">Pressure</h5>
-                                <h5 class="color-gray value-txt">1013 hPa</h5>
+                                <h5 class="color-gray value-txt" id="pressure">1013 in</h5>
                             </div>
                             <div class="col">
                                 <img class="weather-icons" src="https://img.icons8.com/clouds/100/parking-meter.png">
@@ -151,14 +151,14 @@
                 <h6>Today</h6>
             </div>
             <div class="col-5 col-md-3 d-flex align-items-center gap-3">
-                <span class="forecast-icon">🌧️</span>
-                <span class="weather-description">Rain showers</span>
+                <span class="forecast-icon" id="weather-icon-1">🌧️</span>
+                <span class="weather-description" id="weather-desc-day1">Rain showers</span>
             </div>
-            <div class="col-2 col-md-3 rain">
+            <div class="col-2 col-md-3 rain" id="humidity-day1">
                 💧 100%
             </div>
             <div class="col-2 col-md-3 temp-range">
-                <strong>29°</strong>
+                <strong id="temp-day1">29°</strong>
             </div>
         </div>
 
@@ -168,93 +168,34 @@
                 <h6>Tomorrow</h6>
             </div>
             <div class="col-5 col-md-3 d-flex align-items-center gap-3">
-                <span class="forecast-icon">🌧️</span>
-                <span class="weather-description">Rain showers</span>
+                <span class="forecast-icon" id="weather-icon-2">🌧️</span>
+                <span class="weather-description" id="weather-desc-day2">Rain showers</span>
             </div>
-            <div class="col-2 col-md-3 rain">💧 100%</div>
+            <div class="col-2 col-md-3 rain" id="humidity-day2">💧 100%</div>
             <div class="col-2 col-md-3 temp-range">
-                <strong>29°</strong>
+                <strong id="temp-day2">29°</strong>
             </div>
         </div>
 
         <!-- Monday -->
         <div class="row forecast-row align-items-center">
             <div class="col-3 col-md-3">
-                <h6>Monday</h6>
+                <h6 id="day3">Monday</h6>
             </div>
             <div class="col-5 col-md-3 d-flex align-items-center gap-3">
-                <span class="forecast-icon">🌦️</span>
-                <span class="weather-description">Rain showers</span>
+                <span class="forecast-icon" id="weather-icon-3">🌦️</span>
+                <span class="weather-description" id="weather-desc-day3">Rain showers</span>
             </div>
-            <div class="col-2 col-md-3 rain">💧 100%</div>
+            <div class="col-2 col-md-3 rain" id="humidity-day3">💧 100%</div>
             <div class="col-2 col-md-3 temp-range">
-                <strong>29°</strong>
+                <strong id="temp-day3">29°</strong>
             </div>
         </div>
 
-        <!-- Tuesday -->
-        <div class="row forecast-row align-items-center">
-            <div class="col-3 col-md-3">
-                <h6>Tuesday</h6>
-            </div>
-            <div class="col-5 col-md-3 d-flex align-items-center gap-3">
-                <span class="forecast-icon">⛈️</span>
-                <span class="weather-description">Thunderstorm</span>
-            </div>
-            <div class="col-2 col-md-3 rain">💧 100%</div>
-            <div class="col-2 col-md-3 temp-range">
-                <strong>29°</strong>
-            </div>
-        </div>
-
-        <!-- Wednesday -->
-        <div class="row forecast-row align-items-center">
-            <div class="col-3 col-md-3">
-                <h6>Wednesday</h6>
-            </div>
-            <div class="col-5 col-md-3 d-flex align-items-center gap-3">
-                <span class="forecast-icon">🌦️</span>
-                <span class="weather-description">Rain showers</span>
-            </div>
-            <div class="col-2 col-md-3 rain">💧 100%</div>
-            <div class="col-2 col-md-3 temp-range">
-                <strong>29°</strong>
-            </div>
-        </div>
-
-        <!-- Thursday -->
-        <div class="row forecast-row align-items-center">
-            <div class="col-3 col-md-3">
-                <h6>Thursday</h6>
-            </div>
-            <div class="col-5 col-md-3 d-flex align-items-center gap-3">
-                <span class="forecast-icon">🌧️</span>
-                <span class="weather-description">Rain showers</span>
-            </div>
-            <div class="col-2 col-md-3 rain">💧 100%</div>
-            <div class="col-2 col-md-3 temp-range">
-                <strong>29°</strong>
-            </div>
-        </div>
-
-        <!-- Friday -->
-        <div class="row forecast-row align-items-center">
-            <div class="col-3 col-md-3">
-                <h6>Friday</h6>
-            </div>
-            <div class="col-5 col-md-3 d-flex align-items-center gap-3">
-                <span class="forecast-icon">🌧️</span>
-                <span class="weather-description">Heavy drizzle</span>
-            </div>
-            <div class="col-2 col-md-3 rain">💧 92%</div>
-            <div class="col-2 col-md-3 temp-range">
-                <strong>30°</strong>
-            </div>
-        </div>
-
+       
     </div>
 </div>
-
+<script src="js/app.js"></script>
 </body>
 
 </html>
